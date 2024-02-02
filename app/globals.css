@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background: #121212;
+body {
+  color: white;
+  background-color: #121212;
+  overflow: hidden;
+}
+.flex-props-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-props-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container{
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+.container::-webkit-scrollbar-thumb{
+  background: gray;
+  width: 7px;
+  border-radius: 25px;
+}
+.music-item:hover .controls{
+  display: flex;
+  background-color: #faf0f08c;
+  padding-bottom: 8px;
 }

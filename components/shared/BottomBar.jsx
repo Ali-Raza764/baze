@@ -4,7 +4,7 @@ import { PiPlaylistBold, PiPlaylistLight } from "react-icons/pi";
 import { MdLibraryMusic, MdOutlineLibraryMusic } from "react-icons/md";
 import Link from "next/link";
 
-const SideBar = () => {
+const BottomBar = () => {
   const links = [
     { name: "Home", href: "/", icon: <BiHome />, activeIcon: <BiSolidHome /> },
     {
@@ -20,18 +20,13 @@ const SideBar = () => {
       activeIcon: <MdLibraryMusic />,
     },
   ];
-  return (
-    <div className="h-screen p-2 w-[10rem] hidden md:flex flex-col gap-y-4 pt-14 shadow-gray-900 shadow-md">
-      {links.map((link) => (
-        <Link key={link.name} href={link.href}>
-          <div className="flex gap-2 text-xl font-semibold items-center text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg p-2">
-            {link.icon}
-            {link.name}
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
+  return <div className="w-full h-10 md:hidden bg-black flex-props-b px-2 p-1">
+    {
+      links.map((link) => (
+        <Link key={link.name} href={link.href} className="flex-props-c gap-x-2 text-lg font-sans font-semibold">{link.icon}{link.name}</Link>
+      ))
+    }
+  </div>;
 };
 
-export default SideBar;
+export default BottomBar;
