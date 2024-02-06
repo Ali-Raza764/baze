@@ -52,7 +52,7 @@ const Player = ({ name, images, artist, url, id }) => {
     new JsFileDownloader({
       onloadstart: () => setDownloading(true),
       url,
-      filename: name + ".mp3",
+      filename: name + ".m4a",
       forceDesktopMode: true,
     })
       .then(() => setDownloading(false))
