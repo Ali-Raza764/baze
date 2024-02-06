@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/shared/Header";
 import SideBar from "@/components/shared/SideBar";
 import Player from "@/components/shared/Player";
 import BottomBar from "@/components/shared/BottomBar";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <NextTopLoader showSpinner={false} color="rgb(34 197 94 /1)" />
+        {/* <Header /> */}
         <div className="flex-props-b">
           <SideBar />
-          <div className="w-screen md:w-full h-screen overflow-scroll p-4">
+          <div className="w-screen md:w-full h-screen  p-4 pb-[7rem] overflow-y-scroll">
             {children}
           </div>
         </div>

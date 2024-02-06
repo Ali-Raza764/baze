@@ -9,10 +9,13 @@ const Header = () => {
         <h2 className="text-2xl font-semibold font-sans">Baze</h2>
       </div>
       <div className="search">
-        <input type="text" placeholder="Search" className="outline-none bg-gray-600 p-2 text-xl rounded-2xl w-[26rem] hidden md:flex" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="outline-none bg-gray-600 p-2 text-xl rounded-2xl w-[26rem] hidden md:flex"
+        />
       </div>
       <div className="controls flex-props-b gap-5">
-        <div className="theme h-8 w-8 bg-black rounded-full"></div>
         <div className="theme h-8 w-8 bg-black rounded-full"></div>
       </div>
     </div>

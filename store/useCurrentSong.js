@@ -1,9 +1,8 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
 const useCurrentSong = create((set) => ({
-  data: {},
-  updateSong: (newData) => set({ data: newData }),
+  CurrentSongId: "",
+  updateSong: (newId) => set({ CurrentSongId: newId }),
 }));
 
 export default useCurrentSong;

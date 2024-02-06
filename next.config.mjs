@@ -5,6 +5,12 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "c.saavncdn.com",
+        pathname: "/**"
+      },
+      {
+        protocol: "http",
+        hostname: "c.saavncdn.com",
+        pathname: "/**"
       },
       {
         protocol: "https",

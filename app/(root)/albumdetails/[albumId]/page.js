@@ -3,12 +3,12 @@ import Image from "next/image";
 import React from "react";
 
 const AlbumDetails = async ({ params }) => {
-  const response = await fetch(`https://saavn.me/albums?id=${params.albumId}`);
+  const response = await fetch(`https://saavn.dev/albums?id=${params.albumId}`);
   const result = await response.json();
   const data = result.data;
 
   return (
-    <div className="w-full min-h-screen pb-[11rem]">
+    <div className="w-full">
       <div className="w-full flex flex-col md:flex-row md:gap-x-7">
         <div>
           <Image

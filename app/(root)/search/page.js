@@ -21,16 +21,17 @@ const Search = () => {
   const fetchData = async (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    setLoading(true);
     if (search) {
       try {
-        const res = await fetch(`https://saavn.me/search/all?query=${search}`);
+        // Show loader before fetching data
+        setLoading(true);
+        const res = await fetch(`https://saavn.dev/search/all?query=${search}`);
         const data = await res.json();
-        console.log(data);
         setData(data.data);
       } catch (error) {
         console.error;
       } finally {
+        // Hide loader after data fetching is done
         setLoading(false);
       }
     }
@@ -45,22 +46,23 @@ const Search = () => {
             name="search"
             id="search"
             placeholder="Songs, Albums, Artists"
-            className="w-full p-2 border rounded-md outline-none text-black"
+            className="outline-none bg-gray-600 p-2 text-xl rounded-2xl w-full mb-3"
           />
         </form>
       </div>
-      {!data && (
+      {!data ? (
         <div className="w-full min-h-screen pb-24">
-          <h1 className="text-3xl font-bold font-sans">Search Now</h1>
-          <div className="flex flex-wrap justify-around mt-8">
+          <h1 className="text-3xl font-bold font-sans">
+            Search <strong className="text-green-500">Now</strong>
+          </h1>
+          <div className="flex flex-wrap justify-around mt-3">
             <GenreBox genre="Songs" color="#E6E1F0" />
             <GenreBox genre="Playlists" color="#F4E9F4" />
             <GenreBox genre="Artists" color="#F0E9F4" />
             <GenreBox genre="Albums" color="#E9F4F2" />
           </div>
         </div>
-      )}
-      {data && !loading && (
+      ) : !loading ? (
         <div className="results h-full w-full flex flex-col">
           <div className="songs">
             <h2 className="text-3xl font-semibold font-sans mt-5">Songs</h2>
@@ -75,9 +77,12 @@ const Search = () => {
             <MusicCarousel data={data?.artists?.results} type={"artists"} />
           </div>
         </div>
+      ) : (
+        ""
       )}
+      {/* Loader */}
       {loading && (
-        <div className="h-[80vh] w-full flex flex-col items-center justify-center">
+        <div className="h-[80vh] w-full flex items-center justify-center">
           <Image
             src={"/assets/WMDx.gif"}
             alt="Loading..."

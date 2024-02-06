@@ -17,19 +17,28 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.container{
+.container {
   overflow-y: scroll;
 }
-.container::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
-.container::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: gray;
   width: 7px;
-  border-radius: 25px;
+  border-radius: 15px;
 }
-.music-item:hover .controls{
+.music-button:hover .play-button {
   display: flex;
-  background-color: #faf0f08c;
-  padding-bottom: 8px;
+}
+
+.volume-slider {
+  transform: rotate(270deg);
+}
+.volume:hover .volume-slider {
+  display: block;
+}
+
+.volume-slider:hover {
+  display: block;
 }
