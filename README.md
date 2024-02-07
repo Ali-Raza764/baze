@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Music Streaming and Downloading Web Application
 
-## Getting Started
+This is a music streaming and downloading web application built using Next.js and the JioSaavn API. It allows users to search for their favorite songs, stream them online, and download them for offline listening. The application is designed to provide a seamless and enjoyable music listening experience.
 
-First, run the development server:
+## Live Preview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Visit Live](https://baze-chi.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Landing Page
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![Landing Page](landing-page.PNG)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- Search for songs, albums, and artists.
+- Stream music online.
+- Download songs for offline listening.
+- Responsive design for optimal viewing on various devices.
+- Utilizes Tailwind CSS for styling.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js
+- JioSaavn API [Check Out](https://github.com/sumitkolhe/jiosaavn-api)
+- Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Obtain API access from JioSaavn and replace the placeholder API keys in the code with your own.
+4. Run the application using `npm run dev`.
+5. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- On the landing page, users can search for songs, albums, or artists using the search bar.
+- Clicking on a search result will take users to a page where they can stream the song or album.
+- Users can also download songs for offline listening by clicking the download button.
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository, make your changes, and submit a pull request. Please follow the existing code style and make sure to thoroughly test your changes.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
