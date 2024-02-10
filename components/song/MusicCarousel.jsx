@@ -9,7 +9,6 @@ const MusicCarousel = ({ data, type }) => {
   return (
     <Swiper
       className="w-full mt-6"
-      autoplay
       spaceBetween={50}
       slidesPerView={7}
       breakpoints={{

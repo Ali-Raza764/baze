@@ -20,13 +20,16 @@ body {
 .container {
   overflow-y: scroll;
 }
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: gray;
-  width: 7px;
-  border-radius: 15px;
+@media (min-width: 768px) {
+  /* Your CSS code here */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    width: 7px;
+    border-radius: 15px;
+  }
 }
 .music-button:hover .play-button {
   display: flex;
