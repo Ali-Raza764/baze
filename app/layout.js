@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col`}>
+      <body className={`${inter.className} flex flex-col h-screen`}>
         <NextTopLoader showSpinner={false} color="rgb(34 197 94 /1)" />
         <div className="flex-props-b z-10">
           <SideBar />
