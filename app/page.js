@@ -54,7 +54,7 @@ const Feed = async () => {
           <div className="trending Songs flex flex-col mt-3" key={value.type}>
             <h2 className="text-3xl font-semibold font-sans">{value.name}</h2>
             <div className="w-full flex">
-              <FeedCarousel data={value.data} type={value.type} />
+              <MusicCarousel data={value.data} type={value.type} />
             </div>
           </div>
         );
