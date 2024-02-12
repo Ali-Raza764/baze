@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "js-file-downloader": "^1.1.25",
+    "lucide-react": "^0.323.0",
     "next": "14.1.0",
     "nextjs-toploader": "^1.6.6",
     "react": "^18",
@@ -21,6 +25,8 @@
     "react-slick": "^0.30.0",
     "sharp": "^0.33.2",
     "swiper": "^11.0.5",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.5.0"
   },
   "devDependencies": {

@@ -1,0 +1,24 @@
+.feed-car {
+  overflow-x: auto; /* Hide scrollbar initially */
+}
+
+.feed-car {
+  overflow-x: scroll; /* Display scrollbar on hover */
+}
+
+@media (min-width: 768px) {
+  .feed-car::-webkit-scrollbar {
+    width: 10px;
+  }
+  .feed-car::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    height: 10px; /* Adjust the height of the scrollbar */
+  }
+  .feed-car:hover::-webkit-scrollbar-thumb {
+    background-color: darkslategrey;
+    border-radius: 10px;
+    height: 10px; /* Adjust the height of the scrollbar */
+    width: 10px;
+  }
+}

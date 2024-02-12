@@ -1,23 +1,32 @@
 "use client";
-import useCurrentSong from "@/store/useCurrentSong";
+import useCurrentPlaylist from "@/store/useCurrentPlaylist";
 import React from "react";
 import { AiFillPauseCircle, AiFillPlayCircle } from "react-icons/ai";
 
-const MusicButton = ({ id }) => {
-  let { CurrentSongId, updateSong } = useCurrentSong();
-  const playSong = async () => {
-    updateSong(id);
+const MusicButton = ({ id, size, name }) => {
+  const { currentSongId, updateCurrentSong, updateCurrentPlaylist } =
+    useCurrentPlaylist();
+  const handlePlay = () => {
+    const playlist = {
+      name: "Playlist",
+      songCount: 1,
+      songs: [{ name: name, id: id }],
+    };
+    updateCurrentSong(id);
+    updateCurrentPlaylist(playlist);
   };
   return (
-    <button className="music-button w-full h-full absolute flex-props-c  block transition-all duration-300">
-      {CurrentSongId && CurrentSongId === id ? (
+    <button className="music-button w-full h-full flex-props-c  block transition-all duration-300">
+      {currentSongId && currentSongId === id ? (
         <AiFillPauseCircle
+          size={size}
           className={`pause button text-[4rem] text-[#1ed760] text-center `}
         />
       ) : (
         <AiFillPlayCircle
-          onClick={playSong}
-          className="play-button text-[4rem] text-[#1ed760] text-center hidden"
+          onClick={handlePlay}
+          size={size}
+          className="play-button text-[4rem] text-[#1ed760] text-center"
         />
       )}
     </button>

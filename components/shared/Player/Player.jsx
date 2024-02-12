@@ -5,6 +5,8 @@ import Link from "next/link";
 import JsFileDownloader from "js-file-downloader";
 import { FaPause, FaPlay, FaVolumeUp } from "react-icons/fa";
 import { GiNextButton, GiPreviousButton } from "react-icons/gi";
+import useCurrentPlaylist from "@/store/useCurrentPlaylist";
+import Playlist from "./Playlist";
 
 const Player = ({ name, images, artist, url, id }) => {
   const [progress, setProgress] = useState("0");
@@ -12,6 +14,8 @@ const Player = ({ name, images, artist, url, id }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const audio = useRef();
+  const { currentPlaylist, currentSongId, updateCurrentSong } =
+    useCurrentPlaylist();
 
   const togglePlaying = () => {
     setPlaying((prevPlaying) => {
@@ -48,6 +52,20 @@ const Player = ({ name, images, artist, url, id }) => {
     }
   };
 
+  const changeSong = () => {
+    if (currentPlaylist && currentSongId) {
+      const currentIndex = currentPlaylist.songs.findIndex(
+        (song) => song.id === currentSongId
+      );
+      if (currentIndex === currentPlaylist.songs.length - 1) {
+        return;
+      }
+      const newIndex = currentIndex + 1;
+      const newSongId = currentPlaylist.songs[newIndex].id;
+      updateCurrentSong(newSongId);
+    }
+  };
+
   const handleDownload = () => {
     new JsFileDownloader({
       onloadstart: () => setDownloading(true),
@@ -60,7 +78,7 @@ const Player = ({ name, images, artist, url, id }) => {
   };
 
   return (
-    <div className="h-max shadow-md shadow-gray-500 w-full flex justify-between items-center bg-black border-b p-1">
+    <div className="h-[10vh] shadow-md md:shadow-none shadow-gray-500 w-full flex justify-between items-center bg-black border-b md:border-none">
       <Link href={`/songdetails/${id}`} className="flex">
         <Image
           src={images[1].link}
@@ -102,6 +120,7 @@ const Player = ({ name, images, artist, url, id }) => {
           onPause={() => setPlaying(false)}
           onPlay={() => setPlaying(true)}
           onTimeUpdateCapture={handleTimeUpdate}
+          onEnded={changeSong}
         ></audio>
         <div className="flex items-center justify-between md:justify-center w-full px-1">
           <div className="audio-controls flex items-center gap-x-3">
@@ -112,8 +131,15 @@ const Player = ({ name, images, artist, url, id }) => {
               {playing ? <FaPause size={20} /> : <FaPlay size={20} />}
             </div>
             <div className="cursor-pointer">
-              <GiNextButton size={20} />
+              <GiNextButton size={20} onClick={changeSong} />
             </div>
+          </div>
+          <div className="md:hidden">
+            <Playlist
+              songs={currentPlaylist.songs}
+              name={currentPlaylist.name}
+              currentSongId={currentSongId}
+            />
           </div>
           <button
             onClick={handleDownload}
@@ -128,7 +154,12 @@ const Player = ({ name, images, artist, url, id }) => {
           </button>
         </div>
       </div>
-      <div className="other hidden md:flex gap-x-5">
+      <div className="other md:flex-props-b  hidden md:flex gap-x-5">
+        <Playlist
+          songs={currentPlaylist.songs}
+          name={currentPlaylist.name}
+          currentSongId={currentSongId}
+        />
         <div className="volume relative w-full h-full">
           <button className="w-full toggle-volume">
             <FaVolumeUp size={25} />
@@ -138,9 +169,7 @@ const Player = ({ name, images, artist, url, id }) => {
             name="volume"
             id="volume"
             min={0}
-            defaultValue={
-              audio?.current?.volume ? audio.current.volume * 100 : 0
-            }
+            defaultValue={50}
             max={100}
             onChange={handleVolume}
             className="volume-slider absolute -top-[4.2rem] -right-[3.4rem] hidden"

@@ -6,7 +6,7 @@ const ArtistItem = ({ item: { title, image, id } }) => {
   return (
     <Link
       href={`/artist/${id}`}
-      className="music-item w-[9rem] h-[12rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex-props-b flex-col p-2"
+      className="music-item w-[10rem] h-[14rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex-props-b flex-col p-2"
     >
       <Image
         src={image[2].link}

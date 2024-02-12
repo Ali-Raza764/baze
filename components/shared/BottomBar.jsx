@@ -8,7 +8,7 @@ const BottomBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-full h-10 md:hidden bg-black flex-props-b px-2 p-1">
+    <div className="w-full h-[10vh] md:hidden bg-black flex-props-b px-2 p-1">
       {links.map((link) => (
         <Link
           key={link.name}

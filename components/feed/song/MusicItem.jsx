@@ -1,16 +1,16 @@
-import useCurrentSong from "@/store/useCurrentSong";
 import Image from "next/image";
 import React from "react";
-import { AiFillPlayCircle } from "react-icons/ai";
-import MusicButton from "../shared/buttons/MusicButton";
+import MusicButton from "@/components/shared/buttons/MusicButton";
 
 const MusicItem = ({
   item: { title, name, image, album, primaryArtists, id },
 }) => {
   return (
-    <div className="music-item w-[9rem] h-[12rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex flex-col p-2">
+    <div className="music-item w-[10rem] h-[14rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex flex-col p-2">
       <div className="w-full h-full relative">
-        <MusicButton id={id} />
+        <div className="absolute bottom-0 right-0 play-button hidden">
+          <MusicButton id={id} size={50} name={name} />
+        </div>
         <Image
           src={image[2].link}
           alt={"Song Image"}

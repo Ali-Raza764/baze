@@ -15,17 +15,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} flex flex-col`}>
         <NextTopLoader showSpinner={false} color="rgb(34 197 94 /1)" />
-        {/* <Header /> */}
-        <div className="flex-props-b">
+        <div className="flex-props-b z-10">
           <SideBar />
-          <div className="w-screen md:w-full h-screen  p-4 pb-[7rem] overflow-y-scroll">
+          <div className="w-screen md:w-full md:h-[90vh] h-[80vh] page p-4 overflow-y-scroll">
             {children}
           </div>
         </div>
 
-        <div className="flex flex-col fixed bottom-0 w-full z-50">
+        <div className="bottom-0 z-50 flex flex-col h-[20vh] md:h-[10vh] ">
           <Player />
           <BottomBar />
         </div>

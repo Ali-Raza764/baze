@@ -38,7 +38,7 @@ const Search = () => {
   };
 
   return (
-    <div className="w-full min-h-screen pb-24">
+    <div className="w-full min-h-screen">
       <div className="seacrh w-full p-2 px-4">
         <form onSubmit={fetchData}>
           <input
@@ -51,7 +51,7 @@ const Search = () => {
         </form>
       </div>
       {!data ? (
-        <div className="w-full min-h-screen pb-24">
+        <div className="w-full">
           <h1 className="text-3xl font-bold font-sans">
             Search <strong className="text-green-500">Now</strong>
           </h1>

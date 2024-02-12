@@ -1,14 +1,15 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import MusicItem from "./MusicItem";
-import AlbumItem from "./AlbumItem";
-import ArtistItem from "./ArtistItem";
+import MusicItem from "./song/MusicItem";
+import AlbumItem from "./album/AlbumItem";
+import ArtistItem from "./artist/ArtistItem";
+import PlaylistItem from "./playlist/PlaylistItem";
 
 const MusicCarousel = ({ data, type }) => {
   return (
     <Swiper
-      className="w-full mt-6"
+      className="w-full mt-3"
       spaceBetween={50}
       slidesPerView={7}
       breakpoints={{
@@ -58,6 +59,14 @@ const MusicCarousel = ({ data, type }) => {
           return (
             <SwiperSlide key={item.id}>
               <ArtistItem item={item} />
+            </SwiperSlide>
+          );
+        })}
+      {type == "playlists" &&
+        data?.map((item) => {
+          return (
+            <SwiperSlide key={item.id}>
+              <PlaylistItem item={item} />
             </SwiperSlide>
           );
         })}

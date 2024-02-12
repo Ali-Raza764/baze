@@ -22,16 +22,25 @@ body {
 }
 @media (min-width: 768px) {
   /* Your CSS code here */
-  ::-webkit-scrollbar {
+  .page::-webkit-scrollbar {
     width: 10px;
   }
-  ::-webkit-scrollbar-thumb {
+  .page::-webkit-scrollbar-thumb {
+    background: gray;
+    width: 7px;
+    border-radius: 15px;
+  }
+  .playlist-songs-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .playlist-songs-container::-webkit-scrollbar-thumb {
     background: gray;
     width: 7px;
     border-radius: 15px;
   }
 }
-.music-button:hover .play-button {
+
+.music-item:hover .play-button {
   display: flex;
 }
 
@@ -44,4 +53,7 @@ body {
 
 .volume-slider:hover {
   display: block;
+}
+.sheet::backdrop {
+  background-color: black;
 }
