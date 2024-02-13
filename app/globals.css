@@ -22,6 +22,14 @@ body {
 }
 @media (min-width: 768px) {
   /* Your CSS code here */
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: gray;
+  }
   .page::-webkit-scrollbar {
     width: 10px;
   }
@@ -40,6 +48,9 @@ body {
   }
 }
 
+.music-item:hover {
+  border-radius: 7px;
+}
 .music-item:hover .play-button {
   display: flex;
 }

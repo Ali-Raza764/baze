@@ -1,18 +1,16 @@
 import { MusicCarousel } from "@/components";
-import FeedCarousel from "@/components/feed/FeedCarousel";
 import Link from "next/link";
 
 export const revalidate = 10000;
 
 export default async function Home() {
   return (
-    <main className="w-full h-full mb-[11rem] md:mb-[7rem]">
+    <main className="w-full mb-24 md:mb-[7rem] ">
       <Header />
       <Feed />
     </main>
   );
 }
-
 
 const Header = () => {
   return (
@@ -59,12 +57,6 @@ const Feed = async () => {
           </div>
         );
       })}
-       {/* <div className="trending Songs flex flex-col mt-3">
-            <h2 className="text-3xl font-semibold font-sans">Trending</h2>
-            <div className="w-full flex">
-              <FeedCarousel data={data.data.trending.songs} type={"songs"} />
-            </div>
-          </div> */}
     </>
   );
 };

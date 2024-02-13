@@ -13,7 +13,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`h-[90vh] max-w-[11rem] p-2 hidden md:flex flex-col justify-between items-center shadow-gray-800 shadow-sm relative transition-all duration-500 ${
+      className={`h-screen max-w-[11rem] p-2 hidden md:flex flex-col justify-between items-center pb-24 shadow-gray-800 shadow-sm relative transition-all duration-500 ${
         open ? "w-60" : "w-20"
       }`}
     >

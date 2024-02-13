@@ -24,7 +24,7 @@ const Player = () => {
 
   if (!currentSongId) {
     return (
-      <div className="w-[100vw] flex items-center justify-center p-1">
+      <div className="w-[100vw] hidden md:flex items-center justify-center p-1">
         <h2 className="font-semibold font-sans w-full text-2xl text-center flex-props-c">
           <AiFillPlayCircle size={50} className="text-green-500" />
           Play A Song Now

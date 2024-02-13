@@ -2,9 +2,7 @@ import Image from "next/image";
 import React from "react";
 import MusicButton from "@/components/shared/buttons/MusicButton";
 
-const MusicItem = ({
-  item: { title, name, image, album, primaryArtists, id },
-}) => {
+const MusicItem = ({ item: { title, name, image, primaryArtists, id } }) => {
   return (
     <div className="music-item w-[10rem] h-[14rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex flex-col p-2">
       <div className="w-full h-full relative">
