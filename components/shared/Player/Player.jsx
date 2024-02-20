@@ -7,6 +7,7 @@ import { FaPause, FaPlay, FaVolumeUp } from "react-icons/fa";
 import { GiNextButton, GiPreviousButton } from "react-icons/gi";
 import useCurrentPlaylist from "@/store/useCurrentPlaylist";
 import Playlist from "./Playlist";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const Player = ({ name, images, artist, url, id }) => {
   const [progress, setProgress] = useState("0");
@@ -88,10 +89,10 @@ const Player = ({ name, images, artist, url, id }) => {
           className="h-12 w-12 rounded-sm mr-1"
         />
         <div className="flex flex-col">
-          <h3 className="w-[32vw] md:w-[17vw] line-clamp-1 text-ellipsis font-semibold font-sans">
+          <h3 className="w-[32vw] md:w-[9vw] line-clamp-1 text-ellipsis font-semibold font-sans">
             {name}
           </h3>
-          <p className="w-[32vw] md:w-[17vw] line-clamp-1 text-ellipsis text-sm text-gray-400">
+          <p className="w-[32vw] md:w-[9vw] line-clamp-1 text-ellipsis text-sm text-gray-400">
             {artist}
           </p>
         </div>
@@ -154,14 +155,17 @@ const Player = ({ name, images, artist, url, id }) => {
           </button>
         </div>
       </div>
-      <div className="other md:flex-props-b  hidden md:flex gap-x-5">
+      <div className="other md:flex-props-b hidden md:flex gap-x-5">
         <Playlist
           songs={currentPlaylist.songs}
           name={currentPlaylist.name}
           currentSongId={currentSongId}
         />
+        <button>
+          <AiOutlineHeart size={30} />
+        </button>
         <div className="volume relative w-full h-full">
-          <button className="w-full toggle-volume">
+          <button className="w-full toggle-volume ">
             <FaVolumeUp size={25} />
           </button>
           <input
@@ -172,7 +176,7 @@ const Player = ({ name, images, artist, url, id }) => {
             defaultValue={50}
             max={100}
             onChange={handleVolume}
-            className="volume-slider absolute -top-[4.2rem] -right-[3.4rem] hidden"
+            className="volume-slider absolute -top-[4.2rem] -right-[3.4rem] hidden z-50"
           />
         </div>
         <button onClick={handleDownload} disabled={downloading}>

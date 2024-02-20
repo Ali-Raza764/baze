@@ -9,20 +9,16 @@ const AlbumItem = ({
   return (
     <Link
       href={`/albumdetails/${id}`}
-      className="music-item w-[10rem] h-[14rem]  bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex flex-col p-2"
+      className="music-item  w-[10rem] h-[14rem] bg-transparent hover:bg-gray-500 transition-all duration-150 rounded-md cursor-pointer flex flex-col p-2"
     >
-      <div className="w-full h-full relative">
-        <div className="w-full h-full controls absolute top-0 right-0 left-0 bottom-0 hidden transition-all duration-300 items-center justify-center">
-          <FaHeadphones className="text-[4rem] text-[#1ed760] text-center" />
-        </div>
-        <Image
-          src={image[2].link}
-          width={50}
-          height={50}
-          alt={"song Image"}
-          className="w-full rounded-lg"
-        />
-      </div>
+      <Image
+        src={image[2].link}
+        width={50}
+        height={50}
+        alt={"song Image"}
+        className="w-full rounded-lg"
+      />
+
       <h3 className="text-xl font-semibold text-ellipsis line-clamp-1">
         {name}
       </h3>

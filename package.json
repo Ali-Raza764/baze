@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.9",
     "@radix-ui/react-dialog": "^1.0.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.5",
     "js-file-downloader": "^1.1.25",
     "lucide-react": "^0.323.0",
     "next": "14.1.0",
@@ -23,6 +25,7 @@
     "react-multi-carousel": "^2.8.2",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.30.0",
+    "react-tabs": "^6.0.2",
     "sharp": "^0.33.2",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.1",

@@ -26,7 +26,7 @@ const MusicButton = ({ id, size, name }) => {
         <AiFillPlayCircle
           onClick={handlePlay}
           size={size}
-          className="play-button text-[4rem] text-[#1ed760] text-center"
+          className="play-button text-[4rem] text-[#1ed760] text-center hidden"
         />
       )}
     </button>

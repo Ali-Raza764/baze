@@ -20,7 +20,7 @@ const Playlist = ({ songs, name, currentSongId }) => {
       <div
         className={`sheet fixed -bottom-10 left-0 w-full bg-black p-4 ${
           isOpen ? "h-[80%]" : "h-0"
-        } transition-all duration-300`}
+        } transition-all duration-300 z-50`}
       >
         <div className="sheet-header mb-4">
           <div className="flex-props-b">

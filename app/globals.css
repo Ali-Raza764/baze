@@ -51,10 +51,12 @@ body {
 .music-item:hover {
   border-radius: 7px;
 }
-.music-item:hover .play-button {
+.music-item:hover .music-button .play-button {
   display: flex;
 }
-
+.music-item:hover .controls {
+  display: block;
+}
 .volume-slider {
   transform: rotate(270deg);
 }

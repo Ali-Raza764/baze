@@ -13,7 +13,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`h-screen max-w-[11rem] p-2 hidden md:flex flex-col justify-between items-center pb-24 shadow-gray-800 shadow-sm relative transition-all duration-500 ${
+      className={`max-w-[11rem] p-2 hidden md:flex flex-col justify-between items-center shadow-gray-800 shadow-sm relative transition-all duration-500 ${
         open ? "w-60" : "w-20"
       }`}
     >
@@ -48,7 +48,7 @@ const SideBar = () => {
         </nav>
       </div>
 
-      <div className="bottom flex flex-col w-full sticky bottom-0">
+      <div className="flex-props-c flex-col w-full">
         <div className="flex items-center text-xl font-semibold font-sans gap-2 duration-500">
           <AiOutlineGlobal size={30} /> {open && "Global"}
         </div>

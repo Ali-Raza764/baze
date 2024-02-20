@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ArtistItem = ({ item: { title, image, id } }) => {
+const ArtistItem = ({ item: { title, image, name, id } }) => {
   return (
     <Link
       href={`/artist/${id}`}
@@ -15,7 +15,9 @@ const ArtistItem = ({ item: { title, image, id } }) => {
         alt={"song Image"}
         className="w-full rounded-full"
       />
-      <h3 className="w-full text-ellipsis line-clamp-1 text-xl font-sans font-semibold">{title}</h3>
+      <h3 className="w-full text-ellipsis line-clamp-1 text-xl font-sans font-semibold">
+        {title || name}
+      </h3>
     </Link>
   );
 };
