@@ -1,8 +1,4 @@
-Currently implementing the playlist feature for the The application. The Currently used approached is as follows:
-1. The zustand store holds two value:-
-    1.Currently Playing Song Id.
-    2.Currently Playing Playlist.
-2. When ever a song is played from the playlists page both the values in the store are updated. as the simple songs as concerned like the homepage trending songs they will not be played in playlists for now.
-3. For the indivisual songs their playlist comprises of one one song that is the current song. This appraoch may change later.
-4. A function is created that filters and edits the actual data and creates a new array of objects that only have the song name and the song id that will be used later in the player component.
-5. The Player component renders based on the current song id. If the user clicks the next button on the player the currentSongid in the store will be changed causing the component to refresh and hereby playing a new song. Whereas the current playlist remains unchanged.
+1. Implement User sign in and sign up feature.
+2. Add the feture to add songs to favourites.
+3. Create custom playlists using mongo db or firebase.
+4. Add pro feature to the site to allow song downloading...
