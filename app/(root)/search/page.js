@@ -79,7 +79,7 @@ const Search = () => {
           type="number"
           name="song-count"
           id="song-count"
-          className="outline-none bg-gray-600 p-2 text-xl rounded-2xl w-[8%]"
+          className="outline-none bg-gray-600 p-1 text-xl rounded-xl w-[15%] text-center"
           value={count}
           onChange={(e) => setCount(e.target.value)}
         />
@@ -101,7 +101,7 @@ const Search = () => {
         <TabPanel>
           <h2 className="text-2xl font-semibold font-sans">Songs</h2>
           {loading && <Loader />}
-          <div className="w-full flex-props-c flex-wrap p-2 gap-3">
+          <div className="w-full flex-props-c flex-wrap gap-3">
             {!loading &&
               data &&
               data.results.map((song) => (
@@ -112,7 +112,7 @@ const Search = () => {
         <TabPanel>
           <h2 className="text-2xl font-semibold font-sans">Albums</h2>
           {loading && <Loader />}
-          <div className="w-full flex-props-c flex-wrap p-2 gap-3">
+          <div className="w-full flex-props-c flex-wrap  gap-3">
             {!loading &&
               data &&
               data.results.map((song) => (
@@ -123,7 +123,7 @@ const Search = () => {
         <TabPanel>
           <h2 className="text-2xl font-semibold font-sans">Artists</h2>
           {loading && <Loader />}
-          <div className="w-full flex-props-c flex-wrap p-2 gap-3">
+          <div className="w-full flex-props-c flex-wrap gap-3">
             {!loading &&
               data &&
               data.results.map((song) => (
@@ -134,7 +134,7 @@ const Search = () => {
         <TabPanel>
           <h2 className="text-2xl font-semibold font-sans">Playlists</h2>
           {loading && <Loader />}
-          <div className="w-full flex-props-c flex-wrap p-2 gap-3">
+          <div className="w-full flex-props-c flex-wrap  gap-3">
             {!loading &&
               data &&
               data.results.map((song) => (

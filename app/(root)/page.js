@@ -5,7 +5,7 @@ export const revalidate = 10000;
 
 export default async function Home() {
   return (
-    <main className="w-full mb-24 md:mb-[7rem] ">
+    <main className="w-full">
       <Header />
       <Feed />
     </main>

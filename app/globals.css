@@ -59,9 +59,11 @@ body {
 }
 .volume-slider {
   transform: rotate(270deg);
+  z-index: 999;
 }
 .volume:hover .volume-slider {
   display: block;
+  z-index: 999;
 }
 
 .volume-slider:hover {
